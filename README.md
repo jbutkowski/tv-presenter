@@ -7,7 +7,7 @@ A super simple way to loop images as a full-screen slideshow. Ideal for office T
 ```bash
 $ bundle install
 ```
-2. Save image slides in '/slides' directory
+2. Save image slides in '/slides/[Mon,Tue,Wed,Thu,Fri,Sat,Sun]/' directory
 
 
 ## Run presentation
