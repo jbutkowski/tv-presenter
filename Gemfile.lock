@@ -4,6 +4,7 @@ GEM
     childprocess (4.1.0)
     nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
+    procman (1.9.6)
     racc (1.6.0)
     regexp_parser (2.2.1)
     rexml (3.2.5)
@@ -24,6 +25,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  procman
   watir
   webdrivers (~> 5.0)
 

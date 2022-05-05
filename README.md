@@ -12,12 +12,30 @@ $ bundle install
 
 ## Run presentation
 
-Run presentation with default 10 second slide duration
-```bash
-$ ruby tv-presenter.rb
+(Optional) Customise slide duration in the Procfile (default: 20 seconds)
+```ruby
+# set slide duration (eg: 20 seconds)
+duration = 20
 ```
 
-Run presentation with custom slide duration (eg: 20 seconds)
+Run presentation with default 10 second slide duration
 ```bash
-$ ruby tv-presenter.rb 20
+$ procman start
 ```
+
+
+## Stop presentation
+```bash
+$ procman stop
+```
+
+
+## Test auto stop/start
+
+Edit tv-presenter.rb and change 'test' local variable to true.
+```ruby
+test = false # change to true
+```
+
+Then start the app as noted above.  This will loop 3 times before restarting.
+Note: the duration will affect how long each loop of the test lasts - keep default.

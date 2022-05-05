@@ -36,20 +36,28 @@ class TvPresenter
 	def start_presentation_with(slide_paths)
 		raise "No images found in ./slides directory" if slide_paths.empty?
 
-		GracefulQuit.enable
+		count ||= 0
+
+    GracefulQuit.enable
 
 		# Cycle through slides indefinitely
 		slide_paths.cycle do |path|
 			browser.goto "file://#{path}"
 			sleep(@duration)
-			GracefulQuit.check
 
-			# Break if new day & restart
-			break if new_day?
+			GracefulQuit.check
+			count += 1
+
+			test = false
+			if test
+				break if (count > 3)
+			else
+				break if new_day?
+			end
 		end
 
 		# Restart
-		present
+		system("procman restart")
 	end
 
 
